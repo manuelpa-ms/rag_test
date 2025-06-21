@@ -65,11 +65,10 @@ def main():
     st.set_page_config(
         page_title="Local RAG with Ollama",
         page_icon="📚",
-        layout="wide"
-    )
+        layout="wide"    )
     
     st.title("📚 Local RAG with Ollama")
-    st.markdown("Upload documents and ask questions using local LLM powered by Ollama")
+    st.markdown("Upload documents (Word, PDF) and ask questions using local LLM powered by Ollama")
     
     # Initialize the app
     if 'rag_app' not in st.session_state:
@@ -79,13 +78,12 @@ def main():
     
     # Sidebar for file upload and previously processed documents
     with st.sidebar:
-        st.header("📁 Document Upload")
-        # File uploader
+        st.header("📁 Document Upload")        # File uploader
         uploaded_files = st.file_uploader(
             "Choose files",
-            type=['docx', 'one'],  # Word and OneNote files
+            type=['docx', 'one', 'pdf'],  # Word, OneNote, and PDF files
             accept_multiple_files=True,
-            help="Upload Word (.docx) and OneNote (.one) files"
+            help="Upload Word (.docx), OneNote (.one), and PDF (.pdf) files"
         )
         if uploaded_files:
             st.success(f"Uploaded {len(uploaded_files)} file(s)")

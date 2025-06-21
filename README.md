@@ -79,7 +79,34 @@ rag_test/
 ## Supported File Types
 
 - ✅ **Word Documents (.docx)**: Full text extraction from paragraphs and tables
+- 📄 **PDF Files (.pdf)**: Text extraction from all pages with page number references
 - 🔄 **OneNote (.one)**: Placeholder (requires additional setup)
+
+## PDF Support
+
+The RAG application now supports PDF files in addition to Word documents (.docx). Here's what you need to know:
+
+### Supported File Types
+- **Word Documents (.docx)** - Full text extraction from paragraphs and tables
+- **PDF Files (.pdf)** - Text extraction from all pages with page number references
+- **OneNote Files (.one)** - Limited support (export to supported format recommended)
+
+### PDF Processing Features
+- Extracts text from all pages in the PDF
+- Handles multi-page documents efficiently
+- Includes page number references in extracted text (e.g., [Page 1], [Page 2])
+- Robust error handling for problematic pages
+- Supports both text-based and OCR-readable PDFs
+- Automatic text chunking with configurable overlap
+
+### PDF Processing Notes
+- Scanned PDFs without OCR text layers may not extract text properly
+- Complex layouts, tables, and images are converted to plain text
+- Password-protected PDFs are not currently supported
+- Very large PDFs are processed in chunks to optimize memory usage
+
+### Dependencies
+The PDF support requires the `pypdf` library which has been added to requirements.txt.
 
 ## Configuration
 
