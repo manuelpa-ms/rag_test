@@ -1,0 +1,9 @@
+/.venv
+/cache
+/chroma_db
+/create_sample_doc.ps1
+/create_sample_doc.py
+/sample_document.md
+/sample_test_document.docx
+/techspecsheet-smart1-uk.docx
+/__pycache__
